@@ -8,11 +8,18 @@
 
     <script src="js/loader.min.js"></script>
     <script>
-    var load_scripts = ['http://libs.baidu.com/jquery/1.9.1/jquery.min.js',
-                        'http://libs.baidu.com/swfobject/2.2/swfobject.js'];
-    Loader.load(load_scripts, function() {
-        Loader.js('js/test.js');
-    });
+    </script>
+    <script>
+        var load_scripts = ['http://libs.baidu.com/jquery/1.9.1/jquery.min.js',
+                            'http://libs.baidu.com/swfobject/2.2/swfobject.js'];
+
+        Loader.load(load_scripts, function() {
+            Loader.css('css/reset.css', function() {
+                $('body').append('<p>css loaded</p>');
+            });
+
+            Loader.js('js/test.js');
+        });
     </script>
 </body>
 </html>
