@@ -51,7 +51,7 @@ var Loader = (function() {
         }; 
  
         if (isFunction(callback)) {
-            if (UA.browser === 'msie' && UA.version < '9') { // ie6 ~ 8
+            if (UA.browser === 'msie' && (UA.version < '9' && UA.version > '5')) { // ie6 ~ 8
                 script.onreadystatechange = function() {
                     if (/loaded|complete/.test(script.readyState)) {
                         wellDone();
